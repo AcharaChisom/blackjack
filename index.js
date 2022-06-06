@@ -20,7 +20,10 @@ function renderGame() {
         isAlive = false
     }
 
-    cardsEl.textContent = "Cards: " + cards[0] + ", " + cards[1]
+    cardsEl.textContent = "Cards: "
+    for (let i = 0; i < cards.length; i++) {
+        cardsEl.textContent += cards[i] + " "
+    }
     messageEl.textContent = message
     sumEl.textContent = "Sum: " + sum
 }
@@ -31,7 +34,7 @@ function startGame() {
 
 function newCard() {
     let thirdCard = 2
-    cards.push(thirdCard) 
+    cards.push(thirdCard)  
     sum += thirdCard
     startGame()
 }
