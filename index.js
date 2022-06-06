@@ -1,3 +1,7 @@
+let player = {
+    name: "solomon",
+    chips: "$200"
+}
 let cards = []
 let sum
 let hasBlackJack = false
@@ -6,6 +10,7 @@ let message = ""
 let messageEl = document.getElementById("message-el")
 let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
+let playerEl = document.getElementById("player-el")
 
 function getRandomCard() {
     let randomNum = Math.floor(Math.random() * 13) + 1
@@ -35,6 +40,8 @@ function renderGame() {
     }
     messageEl.textContent = message
     sumEl.textContent = "Sum: " + sum
+
+    playerEl.textContent = player.name + ": " + player.chips
 }
 
 function startGame() {
